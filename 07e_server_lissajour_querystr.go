@@ -34,11 +34,11 @@ func lissajous(out http.ResponseWriter, r *http.Request) {
     }
     var cycle_count string
     getcycles := r.Form["cycles"]
-    if len(getcycles) == 0 {
-      cycle_count = "4"
-    }
-    if len(getcycles) > 0 {
-      cycle_count = getcycles[0]
+    switch {
+      case len(getcycles) > 0:
+        cycle_count = getcycles[0]
+      default:
+        cycle_count = "4"
     }
     cycles, err := strconv.ParseFloat(cycle_count, 32) // returns a List
     if err != nil {
