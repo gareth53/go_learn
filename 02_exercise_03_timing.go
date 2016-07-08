@@ -8,7 +8,8 @@ import (
     "time"
 )
 /*
-Measure the difference in running tim between our potentially inefficient versions and the one
+Measure the difference in running time between our potentially
+inefficient versions and the one
 that uses strings.Join
 */
 func method1() {
