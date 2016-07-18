@@ -1,3 +1,4 @@
+// CLI to convert CM to Feet & Inches. sample usage: go run 09_distange.go 48
 package main
 
 import (
