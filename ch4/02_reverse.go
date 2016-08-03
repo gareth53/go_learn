@@ -8,13 +8,16 @@ func reverse(s []int) {
   }
 }
 
-/*
-func reversePointer(s []int) []int {
-  return s
+
+func reversePointer(s *List) string {
+  return "s"
 }
-*/
+
 func main() {
   input := [...]int{1, 2, 3, 4, 5}
+  fmt.Printf("%T\n", input)
   reverse(input[:])
   fmt.Println(input)
+
+  fmt.Println(reversePointer(input))
 }
