@@ -31,7 +31,6 @@ func main() {
       fmt.Print(input.Text())
       fmt.Print("\n")
       go fetch(input.Text(), ch) // starring a goroutine
-      urls =+ 1
     }
     fmt.Print(urls)
     for q := 0; q < urls; q++ {
