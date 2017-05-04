@@ -2,21 +2,24 @@ package main
 
 import "fmt"
 
-func remove_dupes(str string) string {
-  output := str[0:1]
-  var char string
-  for i := 1; i<len(str); i++ {
-    char = str[i:i+1]
-    if char != output[len(output)-1:] {
-      output += char
+func remove_dupes(str []string) []string {
+  output := make([]string, len(str))
+  output[0] = str[0]
+  var test string
+  offset := 0
+  for i, val := range str {
+    if val != test {
+      output[i-offset] = val
+      test = val
+    } else {
+      offset += 1
     }
   }
   return output
 }
 
 func main() {
-  testcases := [...]string{"AA", "Aa", "BumbleBee", "Zzzzz", "Hello  Sailor!"}
-  for _, str := range testcases {
-    fmt.Println(remove_dupes(str))
-  }
+  testcase := [...]string{"AA", "AA", "BB", "CC", "CC", "CC"}
+  deduped := remove_dupes(testcase[:])
+  fmt.Println(deduped)
 }
